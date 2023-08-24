@@ -27,7 +27,7 @@ userRoute.post("/api/register",auth, async (req,res)=>{
 })
 
 
-userRoute.post("/api/login", async (req,res)=>{
+userRoute.post("/api/login",loginMiddle, async (req,res)=>{
     try{
             
         const data = await userModel.findOne({email:req.body.email})||null
